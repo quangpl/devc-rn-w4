@@ -1,15 +1,18 @@
-import React from 'react';
-import { Platform } from 'react-native';
-import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
+import React from "react";
+import { Platform } from "react-native";
+import {
+  createStackNavigator,
+  createBottomTabNavigator
+} from "react-navigation";
 
-import TabBarIcon from '../components/TabBarIcon';
+import TabBarIcon from "../components/TabBarIcon";
 import CompleteScreen from "../screens/CompleteScreen";
 import AllScreen from "../screens/AllScreen";
 import ActiveScreen from "../screens/ActiveScreen";
 import DetailScreen from "../screens/DetailScreen";
 const config = Platform.select({
-  web: { headerMode: 'screen' },
-  default: {},
+  web: { headerMode: "screen" },
+  default: {}
 });
 
 const CompleteStack = createStackNavigator(
@@ -25,20 +28,18 @@ CompleteStack.navigationOptions = {
     <TabBarIcon
       focused={focused}
       name={
-        Platform.OS === "ios"
-          ? `ios-checkmark-circle`
-          : "md-information-circle"
+        Platform.OS === "ios" ? `ios-checkmark-circle` : "md-information-circle"
       }
     />
   )
 };
 
-CompleteStack.path = '';
+CompleteStack.path = "";
 
 const AllStack = createStackNavigator(
   {
     All: AllScreen,
-    Detail: DetailScreen
+    Detail: DetailScreen,
   },
   config
 );
@@ -53,7 +54,7 @@ AllStack.navigationOptions = {
   )
 };
 
-AllStack.path = '';
+AllStack.path = "";
 
 const ActiveStack = createStackNavigator(
   {
@@ -72,14 +73,14 @@ ActiveStack.navigationOptions = {
   )
 };
 
-ActiveStack.path = '';
+ActiveStack.path = "";
 
 const tabNavigator = createBottomTabNavigator({
   CompleteStack,
   AllStack,
-  ActiveStack,
+  ActiveStack
 });
 
-tabNavigator.path = '';
+tabNavigator.path = "";
 
 export default tabNavigator;

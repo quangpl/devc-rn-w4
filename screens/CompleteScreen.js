@@ -19,7 +19,7 @@ export default function CompleteScreen() {
         style={styles.container}
         contentContainerStyle={styles.contentContainer}
       >
-        <Text>Hihi</Text>
+        <Text>Complete Screeb</Text>
       </ScrollView>
     </View>
   );

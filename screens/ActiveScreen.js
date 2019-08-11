@@ -4,7 +4,7 @@ import { ScrollView, StyleSheet, Text } from "react-native";
 
 export default function ActiveScreen() {
 
-  return <Text>Hihi</Text>;
+  return <Text>Active Screen</Text>;
 }
 
 ActiveScreen.navigationOptions = {
